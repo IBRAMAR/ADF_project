@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "name": "copyPipeline",
+      "type": "Microsoft.DataFactory/factories/pipelines",
+      "apiVersion": "2018-06-01",
+      "properties": {
+        "activities": [
+          {
+            "name": "CopyDataActivity",
+            "type": "Copy",
+            "typeProperties": {
+              "source": {
+                "type": "BlobSource",
+                "storeSettings": {
+                  "type": "AzureBlobStorageReadSettings",
+                  "recursive": true
+                }
+              },
+              "sink": {
+                "type": "BlobSink"
+              }
+            },
+            "inputs": [
+              {
+                "referenceName": "InputDataset",
+                "type": "DatasetReference"
+              }
+            ],
+            "outputs": [
+              {
+                "referenceName": "OutputDataset",
+                "type": "DatasetReference"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {}
+}
