@@ -1,0 +1,9 @@
+{
+	"name": "ibrahim",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9115a285-9777-4d5e-8523-86a42212c63c",
+		"tenantId": "12fe4e4d-4b50-4d77-842a-b44e10472f04"
+	}
+}
